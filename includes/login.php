@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Login</title>
-    <link rel="stylesheet" href="ProyectoBaseDatos-main/css/login.css">
+    <link href="../css/logins.css" rel="stylesheet">
   </head>
   
   <body>
@@ -19,7 +19,7 @@
 
         <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
 
-        <input class="buttons" type="submit" name="" value="Acceder">
+        <input class="buttons" type="submit" name="" value="Acceder" href="../index.php">
         <p><a href="#">¿Olvidastes tu Contraseña?
 
     
