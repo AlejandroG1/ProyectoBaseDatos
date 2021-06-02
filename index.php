@@ -1,78 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<?php include 'includes/_header.php' ?>
+  <head>
 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div id= "content">
-        <section>
-            <div class= "container">
-                <div class= "row">
-                    <div class= "col-lg-9">
-            </div>
-        </section>
-        <section class>
-            <div class= "container">
-                <div class= "card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class= "col-lg-3 d-flex stat my-3">
-                                <div class="mx-auto">
-                                    <h6 class="text-primary">Ingresos mensuales</h6>
-                                    <h3 class= "font-weight-bold">$50,000</h3>
-                                    <h6 class="text-success">50.50%</h6>
-                                </div>
-                            </div>
+    <title>Login</title>
+    <link href="css/logins.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    
+    <section class="form-login">
 
-                            <div class= "col-lg-3 d-flex stat my-3">
-                                <div class="mx-auto">
-                                    <h6 class="text-primary">Ingresos mensuales</h6>
-                                    <h3 class= "font-weight-bold">$50,000</h3>
-                                    <h6 class="text-success">50.50%</h6>
-                                </div>
-                            </div>
+        <h5>Formulario Login</h5>
 
-                            <div class= "col-lg-3 d-flex stat my-3">
-                                <div class="mx-auto">
-                                    <h6 class="text-primary">Ingresos mensuales</h6>
-                                    <h3 class= "font-weight-bold">$50,000</h3>
-                                    <h6 class="text-success">50.50%</h6>
-                                </div>
-                            </div>
+        <input class="controls" type="text" name="usuario" value="" placeholder="Usuario">
 
-                            <div class= "col-lg-3 d-flex my-3">
-                                <div class="mx-auto">
-                                    <h6 class="text-primary">Ingresos mensuales</h6>
-                                    <h3 class= "font-weight-bold">$50,000</h3>
-                                    <h6 class="text-success">50.50%</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 my-3">
-                        <div class="card rounded-0">
-                            <div class="card header">
-                                <h6 class="font-weight-bold mb-0">numero de usuarios de paga</h6>
-                            </div>
-                            <div class="card-body">
-                                <canvas id="myChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 my-3">
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-<?php include 'includes/_footer.php' ?>
+        <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+        <br>
+       <center> <a href="views/usuarios/index.php" class="btn btn-info" role="button">acceder</a></center>
+       <br>
+        <p><a href="">¿Olvidastes tu Contraseña?
+       
+    
+</body>
 </html>
 
 
