@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insertar Usuarios</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,7 +36,8 @@
 
 <div class="mb-3">
 <label for="telefono" class="form-label">Telefono *</label>
-<input type="tel"  id="telefono" name="telefono " class="form-control">
+<input type="tel"  id="telefono" name="telefono" class="form-control">
+<input type="hidden" name="accion" value="insertar_usuarios">
 </div>
 
 <div class="mb-3">

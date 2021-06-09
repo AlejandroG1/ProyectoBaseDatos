@@ -33,7 +33,7 @@
 
 <?php
 
-$sql = "SELECT nombre, telefono, correo FROM usuarios";
+$sql = "SELECT id, nombre, telefono, correo FROM usuarios";
 $usuarios = mysqli_query($conexion, $sql);
 if($usuarios -> num_rows > 0){
 foreach($usuarios as $key => $row ){
@@ -47,7 +47,19 @@ foreach($usuarios as $key => $row ){
 <td><?php echo $row['nombre']; ?></td>
 <td><?php echo $row['telefono']; ?></td>
 <td><?php echo $row['correo']; ?></td>
-<td>Editar | Eliminar</td>
+<td>
+  <a href="formulario_editar.php?id=<?php echo $row['id']?>">
+    <div">
+      Editar
+    </div>
+  </a>
+  <a>|</a>
+  <a href="eliminar.php">
+    <div">
+    Eliminar
+    </div>
+  </a>
+</td>
 </tr>
 
 
@@ -77,7 +89,7 @@ foreach($usuarios as $key => $row ){
                 <div class= "row">
                     <div class= "col-lg-9">
             </div>
-        </section>>
+        </section>
     </div>
     <?php require '../../includes/_footer.php' ?>
 </html>

@@ -1,6 +1,24 @@
 <?php
 
-require_once '_db.php';
+require_once ("_db.php");
+
+
+if(isset($_POST['accion'])){ 
+    switch($_POST['accion']){
+        case 'editar_usuario';
+        editar_usuario();
+
+        break;
+
+        case 'insertar_usuarios';
+        insertar_usuarios();
+
+        break;
+
+
+    }
+
+}
 
 function insertar_usuarios(){
 
@@ -17,7 +35,20 @@ function insertar_usuarios(){
 
 
 }
+function editar_usuario(){
 
-insertar_usuarios();
+    global $conexion;
+    extract($_POST);
+
+    $consulta="UPDATE usuarios SET nombre = '$nombre', correo = '$correo', password = '$password', telefono = '$telefono' 
+    WHERE id = $id";
+
+   mysqli_query($conexion, $consulta);
+    
+   header("Location: ../views/usuarios/");
+
+
+
+}
 
 ?>

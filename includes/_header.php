@@ -52,11 +52,11 @@ pattern
     Addons
 </div>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="includes/login.php">
+    <a class="nav-link collapsed" href="formulario.php">
     <span class="material-icons">
 login
 </span>
-        <span>Login</span>
+        <span>Agregar datos</span>
     </a>
 </li>
 <li class="nav-item">
