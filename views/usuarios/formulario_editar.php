@@ -51,7 +51,7 @@ value="<?php echo $usuario ['password']; ?>">
 <label for="telefono" class="form-label">Telefono *</label>
 <input type="tel"  id="telefono" name="telefono" class="form-control"
 value="<?php echo $usuario ['telefono']; ?>">
-<input type="hidden" name="accion" value="insertar_usuarios">
+<input type="hidden" name="accion" value="editar_usuario">
 <input type="hidden" name="id" value="<?php echo $id;?>">
 </div>
 

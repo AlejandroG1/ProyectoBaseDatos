@@ -14,7 +14,10 @@ if(isset($_POST['accion'])){
         insertar_usuarios();
 
         break;
+        case 'eliminar_usuarios';
+        eliminar_usuario();
 
+        break;
 
     }
 
@@ -51,4 +54,15 @@ function editar_usuario(){
 
 }
 
+
+
+function eliminar_usuario(){
+
+    global $conexion;
+    extract($_POST);
+    $id = $_POST['id'];
+    $consulta = "DELETE FROM usuarios WHERE id = $id";
+    mysqli_query($conexion, $consulta);
+    header("Location: ../views/usuarios/");
+}
 ?>

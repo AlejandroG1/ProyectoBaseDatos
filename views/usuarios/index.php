@@ -54,7 +54,7 @@ foreach($usuarios as $key => $row ){
     </div>
   </a>
   <a>|</a>
-  <a href="eliminar.php">
+  <a href="formulario_eliminar.php?id=<?php echo $row['id']?>">
     <div">
     Eliminar
     </div>

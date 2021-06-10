@@ -52,7 +52,7 @@ pattern
     Addons
 </div>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="formulario.php">
+    <a class="nav-link collapsed" href="formulario_agregar.php">
     <span class="material-icons">
 login
 </span>
