@@ -34,43 +34,32 @@
 </div>
 
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-    <span class="material-icons">
-pattern
-</span>
-        <span>Components</span>
+    <a class="nav-link collapsed" href="registroproductos.php">
+    <span class="material-icons">pattern</span>
+        <span>Productos</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
-        <span class="material-icons">settings</span>
-        <span>  Utilities</span>
+    <a class="nav-link collapsed" href="index.php">
+        <span class="material-icons">people</span>
+        <span>  Usuarios</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link collapsed" href="categorias.php">
+        <span class="material-icons">category</span>
+        <span>  Categorias</span>
     </a>
 </li>
 <hr class="sidebar-divider">
 <div class="sidebar-heading">
     Addons
 </div>
-<li class="nav-item">
-    <a class="nav-link collapsed" href="formulario_agregar.php">
-    <span class="material-icons">
-login
-</span>
-        <span>Agregar datos</span>
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="charts.html">
-    <span class="material-icons">
-input
-</span>
 
-        <span>Register</span></a>
-</li>
 <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="proyectobasedatos/index.php">
     <span class="material-icons">logout</span>
-        <span>Log out</span>    </a>
+        <span>Salir</span>    </a>
         
 </li>
 
