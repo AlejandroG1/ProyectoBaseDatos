@@ -17,7 +17,7 @@ if(isset($_POST['accion'])){
         case 'eliminar_usuarios';
         eliminar_usuario();
 
-        break;
+        break;        
 
     }
 
@@ -74,64 +74,42 @@ require_once ("_db.php");
 
 if(isset($_POST['accion'])){ 
     switch($_POST['accion']){
-        case 'editar_registroproductos';
-        editar_registroproductos();
+        case 'editar_producto';
+        editar_producto();
 
         break;
 
-        case 'insertar_registroproductos';
-        insertar_registroproductos();
+        case 'eliminar_preoducto';
+        eliminar_prdoducto();
 
-        break;
-        case 'eliminar_registroproductos';
-        eliminar_registroproductos();
-
-        break;
+        break;        
 
     }
 
 }
 
-function insertar_registroproductos(){
+function editar_producto(){
 
     global $conexion;
     extract($_POST);
 
-
-    $consulta="INSERT INTO registroproductos (codigo, nombre, descripcion, precio, cantidad, categorias, imagen, password)
-    VALUES ('$codigo', '$nombre','$descripción','$precio', '$cantidad', '$categoria', '$password');" ;
-
-    mysqli_query($conexion, $consulta);
-    
-    header("Location: ../views/registroproductos/");
-
-
-}
-function editar_registroproductos(){
-
-    global $conexion;
-    extract($_POST);
-
-    $consulta="UPDATE registroproductos SET nombre = '$nombre', correo = '$correo', password = '$password', telefono = '$telefono' 
-    WHERE id = $id";
+    $consulta="UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', color = '$color', precio = '$precio', cantidad = '$cantidad', categorias = '$categorias'
+    WHERE codigo = $codigo";
 
    mysqli_query($conexion, $consulta);
     
-   header("Location: ../views/registroproductos/");
-
-
-
+   header("Location: ../views/productos");
 }
 
-
-
-function eliminar_registroproductos(){
+function eliminar_prdoducto(){
 
     global $conexion;
     extract($_POST);
-    $id = $_POST['id'];
-    $consulta = "DELETE FROM registroproductos WHERE id = $id";
+    $codigo = $_POST['codigo'];
+    $consulta = "DELETE FROM productos WHERE codigo = $codigo";
     mysqli_query($conexion, $consulta);
-    header("Location: ../views/registroproductos/");
+    header("Location: ../views/productos/");
 }
+
+
 ?>

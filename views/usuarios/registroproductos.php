@@ -58,13 +58,13 @@ foreach($productos as $key => $row ){
 <td><?php echo $row['imagen']; ?></td>
 
 <td>
-  <a href="formulario_editar.php?id=<?php echo $row['id']?>">
+  <a href="producto_editar.php?id=<?php echo $row['codigo']?>">
     <div">
       Editar
     </div>
   </a>
   <a>|</a>
-  <a href="formulario_eliminar.php?id=<?php echo $row['id']?>">
+  <a href="producto_eliminar.php?id=<?php echo $row['codigo']?>">
     <div">
     Eliminar
     </div>
@@ -103,6 +103,3 @@ foreach($productos as $key => $row ){
     </div>
     <?php require '../../includes/_footer.php' ?>
 </html
-
-</body>
-</html>
