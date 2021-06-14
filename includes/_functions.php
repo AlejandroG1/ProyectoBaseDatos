@@ -79,14 +79,37 @@ if(isset($_POST['accion'])){
 
         break;
 
-        case 'eliminar_preoducto';
-        eliminar_prdoducto();
+        case 'insertar_productos';
+        insertar_productos();
+
+        break;
+
+        case 'eliminar_productos';
+        eliminar_producto();
 
         break;        
 
     }
 
 }
+
+function insertar_productos(){
+
+    global $conexion;
+    extract($_POST);
+
+
+    $consulta="INSERT INTO productos (codigo, nombre, descripcion, color, precio, cantidad, categorias, imagen)
+    VALUES ('$codigo', '$nombre', '$descripcion', '$color', '$precio', '$cantidad', '$categorias', '$imagen');" ;
+
+    mysqli_query($conexion, $consulta);
+    
+    header("Location: ../views/usuarios/");
+
+
+}
+
+
 
 function editar_producto(){
 
@@ -98,17 +121,19 @@ function editar_producto(){
 
    mysqli_query($conexion, $consulta);
     
-   header("Location: ../views/productos");
+   header("Location: ../views/usuarios");
 }
 
-function eliminar_prdoducto(){
+
+
+function eliminar_producto(){
 
     global $conexion;
     extract($_POST);
-    $codigo = $_POST['codigo'];
+    $id = $_POST['codigo'];
     $consulta = "DELETE FROM productos WHERE codigo = $codigo";
     mysqli_query($conexion, $consulta);
-    header("Location: ../views/productos/");
+    header("Location: ../views/usuarios/");
 }
 
 
