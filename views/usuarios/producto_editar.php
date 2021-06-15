@@ -2,7 +2,7 @@
 
 $id = $_GET['id'];
 require_once ("../../includes/_db.php");
-$consulta = "SELECT * FROM productos WHERE id = id";
+$consulta = "SELECT * FROM productos WHERE id = $id";
 $resultado = mysqli_query($conexion, $consulta);
 $productos = mysqli_fetch_assoc($resultado);
 
