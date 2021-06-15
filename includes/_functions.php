@@ -40,8 +40,8 @@ function insertar_productos(){
                 
 
 
-    $consulta="INSERT INTO productos (nombre, descripcion, color, precio, cantidad, categorias, imagen)
-    VALUES ('$nombre', '$descripcion', '$color', '$precio', '$cantidad', '$categorias', '$imagenFin');" ;
+    $consulta="INSERT INTO productos (nombre, descripcion, color, precio, cantidad, cantidad_min, categorias, imagen)
+    VALUES ('$nombre', '$descripcion', '$color', $precio, $cantidad ,$cantidad_min, '$categorias', '$imagenFin');" ;
 
     mysqli_query($conexion, $consulta);
     

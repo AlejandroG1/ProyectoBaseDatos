@@ -52,7 +52,7 @@
 
 <div class="mb-3">
 <label for="cantidad" class="form-label">Cantidad minima *</label>
-<input type="number"  id="cantidamin" name="cantidadmin" class="form-control">
+<input type="number"  id="cantidad_min" name="cantidad_min" class="form-control">
 </div>
 
 

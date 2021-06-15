@@ -61,4 +61,5 @@ Deportes
     </div>
 </div>
 </body>
+<?php require '../../includes/_footer.php' ?>
 </html>

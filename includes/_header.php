@@ -42,19 +42,13 @@ if($actualsesion == null || $actualsesion == ''){
 </li>
 <hr class="sidebar-divider">
 <div class="sidebar-heading">
-    Interface
+    ADMINISTRADOR
 </div>
 
 <li class="nav-item">
     <a class="nav-link collapsed" href="index.php">
     <span class="material-icons">pattern</span>
         <span>Productos</span>
-    </a>
-</li>
-<li class="nav-item">
-    <a class="nav-link collapsed" href="usuariosindex.php">
-        <span class="material-icons">people</span>
-        <span>  Usuarios</span>
     </a>
 </li>
 <li class="nav-item">
@@ -65,9 +59,14 @@ if($actualsesion == null || $actualsesion == ''){
 </li>
 <hr class="sidebar-divider">
 <div class="sidebar-heading">
-    Addons
+    PERFIL
 </div>
-
+<li class="nav-item">
+    <a class="nav-link collapsed" href="usuariosindex.php">
+        <span class="material-icons">people</span>
+        <span>Información usuario</span>
+    </a>
+</li>
 <li class="nav-item">
     <a class="nav-link" href="../../includes/_sesion/cerrarSesion.php">
     <span class="material-icons">logout</span>

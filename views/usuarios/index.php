@@ -55,8 +55,6 @@ if ($row['cantidad'] <= $row['cantidad_min']) {
 }
  
 // ...
- 
-echo $color;
 
 ?>
 <style>
