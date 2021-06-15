@@ -5,90 +5,19 @@ require_once ("_db.php");
 
 if(isset($_POST['accion'])){ 
     switch($_POST['accion']){
-        case 'editar_usuario';
-        editar_usuario();
-
-        break;
-
-        case 'insertar_usuarios';
-        insertar_usuarios();
-
-        break;
-        case 'eliminar_usuarios';
-        eliminar_usuario();
+        case 'eliminar_producto':
+            eliminar_producto();
 
         break;        
-
-    }
-
-}
-
-function insertar_usuarios(){
-
-    global $conexion;
-    extract($_POST);
-
-
-    $consulta="INSERT INTO usuarios (nombre, correo, telefono, password)
-    VALUES ('$nombre', '$correo', '$telefono', '$password');" ;
-
-    mysqli_query($conexion, $consulta);
-    
-    header("Location: ../views/usuarios/");
-
-
-}
-function editar_usuario(){
-
-    global $conexion;
-    extract($_POST);
-
-    $consulta="UPDATE usuarios SET nombre = '$nombre', correo = '$correo', password = '$password', telefono = '$telefono' 
-    WHERE id = $id";
-
-   mysqli_query($conexion, $consulta);
-    
-   header("Location: ../views/usuarios/");
-
-
-
-}
-
-
-
-function eliminar_usuario(){
-
-    global $conexion;
-    extract($_POST);
-    $id = $_POST['id'];
-    $consulta = "DELETE FROM usuarios WHERE id = $id";
-    mysqli_query($conexion, $consulta);
-    header("Location: ../views/usuarios/");
-}
-?>
-
-<?php
-
-require_once ("_db.php");
-
-
-if(isset($_POST['accion'])){ 
-    switch($_POST['accion']){
-        case 'editar_producto';
+        case 'editar_producto':
         editar_producto();
 
         break;
 
-        case 'insertar_productos';
+        case 'insertar_productos':
         insertar_productos();
 
-        break;
-
-        case 'eliminar_productos';
-        eliminar_producto();
-
-        break;        
-
+        break;    
     }
 
 }
@@ -99,42 +28,53 @@ function insertar_productos(){
     extract($_POST);
 
 
-    $consulta="INSERT INTO productos (codigo, nombre, descripcion, color, precio, cantidad, categorias, imagen)
-    VALUES ('$codigo', '$nombre', '$descripcion', '$color', '$precio', '$cantidad', '$categorias', '$imagen');" ;
+        //variables donde se almacenan los valores de nuestra imagen
+                $tamanoArchvio=$_FILES['foto']['size'];
+    
+        //se realiza la lectura de la imagen
+                $imagenSubida=fopen($_FILES['foto']['tmp_name'], 'r');
+                $binariosImagen=fread($imagenSubida,$tamanoArchvio);   
+        //se realiza la consulta correspondiente para guardar los datos
+        
+        $imagenFin =mysqli_escape_string($conexion,$binariosImagen);
+                
+
+
+    $consulta="INSERT INTO productos (nombre, descripcion, color, precio, cantidad, categorias, imagen)
+    VALUES ('$nombre', '$descripcion', '$color', '$precio', '$cantidad', '$categorias', '$imagenFin');" ;
 
     mysqli_query($conexion, $consulta);
     
     header("Location: ../views/usuarios/");
 
-
 }
-
-
-
 function editar_producto(){
 
     global $conexion;
     extract($_POST);
 
-    $consulta="UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', color = '$color', precio = '$precio', cantidad = '$cantidad', categorias = '$categorias'
-    WHERE codigo = $codigo";
 
-   mysqli_query($conexion, $consulta);
-    
-   header("Location: ../views/usuarios");
+        //variables donde se almacenan los valores de nuestra imagen
+                $tamanoArchvio=$_FILES['foto']['size'];
+        //se realiza la lectura de la imagen
+                $imagenSubida=fopen($_FILES['foto']['tmp_name'], 'r');
+                $binariosImagen=fread($imagenSubida,$tamanoArchvio);   
+        //se realiza la consulta correspondiente para guardar los datos
+        
+        $imagenFin =mysqli_escape_string($conexion,$binariosImagen);
+                
+    $consulta="UPDATE productos SET nombre = '$nombre', descripcion = '$descripcion', color = '$color', precio = '$precio', cantidad = '$cantidad', categorias = '$categorias', imagen = '$imagenFin' WHERE id = $id";
+
+    mysqli_query($conexion, $consulta);
+    header("Location: ../views/usuarios/");
 }
-
-
-
 function eliminar_producto(){
 
     global $conexion;
     extract($_POST);
-    $id = $_POST['codigo'];
-    $consulta = "DELETE FROM productos WHERE codigo = $codigo";
+    $id = $_POST['id'];
+    $consulta = "DELETE FROM productos WHERE id = $id";
     mysqli_query($conexion, $consulta);
     header("Location: ../views/usuarios/");
 }
-
-
 ?>

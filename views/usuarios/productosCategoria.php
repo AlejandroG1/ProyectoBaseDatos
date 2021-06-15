@@ -2,6 +2,7 @@
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
+<body>
 
 <div id= "content">
         <section>
@@ -37,8 +38,9 @@
 <tbody>
 
 <?php
-
-$sql = "SELECT * FROM productos";
+$categoria = $_GET['categoria'];
+extract($_POST);
+$sql = "SELECT * FROM productos WHERE categorias = '$categoria'";
 $productos = mysqli_query($conexion, $sql);
 if($productos -> num_rows > 0){
 foreach($productos as $key => $row ){
@@ -103,4 +105,4 @@ foreach($productos as $key => $row ){
         </section>
     </div>
     <?php require '../../includes/_footer.php' ?>
-</html
+</html>

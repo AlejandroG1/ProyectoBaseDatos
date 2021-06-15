@@ -1,3 +1,14 @@
+<?php
+error_reporting(0);
+session_start();
+$actualsesion = $_SESSION['correo'];
+
+if($actualsesion == null || $actualsesion == ''){
+
+    echo 'acceso denegado';
+    die();
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +21,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
+    <link rel="stylesheet" href="../../css/styles.css">
     <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body>
@@ -34,13 +46,13 @@
 </div>
 
 <li class="nav-item">
-    <a class="nav-link collapsed" href="registroproductos.php">
+    <a class="nav-link collapsed" href="index.php">
     <span class="material-icons">pattern</span>
         <span>Productos</span>
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="index.php">
+    <a class="nav-link collapsed" href="registroproductos.php">
         <span class="material-icons">people</span>
         <span>  Usuarios</span>
     </a>
@@ -57,9 +69,9 @@
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="proyectobasedatos/index.php">
+    <a class="nav-link" href="../../includes/_sesion/cerrarSesion.php">
     <span class="material-icons">logout</span>
-        <span>Salir</span>    </a>
+        <span>Salir</span></a>
         
 </li>
 
@@ -97,7 +109,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $actualsesion?> </span>
                                 <span class="material-icons">account_circle</span>
                             </a>
                         </li>

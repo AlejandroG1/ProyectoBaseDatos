@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <?php require '../../includes/_db.php' ?>
 <?php require '../../includes/_header.php' ?>
 
+<body>
+  
 <div id= "content">
         <section>
         <div class="container mt-5">
 <div class="row">
 <div class="col-sm-12 mb-3">
-<center><h1>Productos</h1></center>
+<center><h1>Usuarios</h1></center>
 </div>
 <div class="col-sm-12">
 <div class="table-responsive">
@@ -18,14 +21,9 @@
 <thead>
 
 <tr>
-<th>Codigo</th>
 <th>Nombre</th>
-<th>Descripcion</th>
-<th>Color</th>
-<th>Precio</th>
-<th>Cantidad</th>
-<th>Categorias</th>
-<th>Imagen</th>
+<th>Telefono</th>
+<th>Correo</th>
 <th>Acciones</th>
 
 
@@ -37,10 +35,10 @@
 
 <?php
 
-$sql = "SELECT * FROM productos";
-$productos = mysqli_query($conexion, $sql);
-if($productos -> num_rows > 0){
-foreach($productos as $key => $row ){
+$sql = "SELECT id, nombre, telefono, correo FROM usuarios";
+$usuarios = mysqli_query($conexion, $sql);
+if($usuarios -> num_rows > 0){
+foreach($usuarios as $key => $row ){
 
 
 
@@ -48,23 +46,17 @@ foreach($productos as $key => $row ){
 ?>
 
 <tr>
-<td><?php echo $row['codigo']; ?></td>
 <td><?php echo $row['nombre']; ?></td>
-<td><?php echo $row['descripcion']; ?></td>
-<td><?php echo $row['color']; ?></td>
-<td><?php echo $row['precio']; ?></td>
-<td><?php echo $row['cantidad']; ?></td>
-<td><?php echo $row['categorias']; ?></td>
-<td><?php echo $row['imagen']; ?></td>
-
+<td><?php echo $row['telefono']; ?></td>
+<td><?php echo $row['correo']; ?></td>
 <td>
-  <a href="producto_editar.php?id=<?php echo $row['codigo']?>">
+  <a href="formulario_editar.php?id=<?php echo $row['id']?>">
     <div">
       Editar
     </div>
   </a>
   <a>|</a>
-  <a href="producto_eliminar.php?id=<?php echo $row['codigo']?>">
+  <a href="formulario_eliminar.php?id=<?php echo $row['id']?>">
     <div">
     Eliminar
     </div>
@@ -101,5 +93,8 @@ foreach($productos as $key => $row ){
             </div>
         </section>
     </div>
+    
     <?php require '../../includes/_footer.php' ?>
-</html
+    </body>
+
+</html>
