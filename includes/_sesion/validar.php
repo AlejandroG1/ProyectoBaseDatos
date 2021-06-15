@@ -10,7 +10,7 @@ session_start();
 $_SESSION['correo']=$correo;
 
 
-$conexion=mysqli_connect("localhost","root","","login");
+$conexion=mysqli_connect("localhost","root","","tienda_unid");
 $consulta="SELECT*FROM user where correo='$correo' and password='$password'";
 $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_num_rows($resultado);
