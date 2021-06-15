@@ -52,7 +52,7 @@ if($actualsesion == null || $actualsesion == ''){
     </a>
 </li>
 <li class="nav-item">
-    <a class="nav-link collapsed" href="registroproductos.php">
+    <a class="nav-link collapsed" href="usuariosindex.php">
         <span class="material-icons">people</span>
         <span>  Usuarios</span>
     </a>
