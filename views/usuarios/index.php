@@ -25,6 +25,7 @@
 <th>Color</th>
 <th>Precio</th>
 <th>Cantidad</th>
+<th>Cantidad minima</th>
 <th>Categorias</th>
 <th>Imagen</th>
 <th>Acciones</th>
@@ -42,19 +43,42 @@ $sql = "SELECT * FROM productos";
 $productos = mysqli_query($conexion, $sql);
 if($productos -> num_rows > 0){
 foreach($productos as $key => $row ){
+?>
+<!--funcion y estilos para celdas en error-->
+<?php
 
-
-
+if ($row['cantidad'] <= $row['cantidad_min']) {
+  $color = '#F78E8E';
+  $clase = 'problema';
+} else {
+  $clase = 'correcto';
+}
+ 
+// ...
+ 
+echo $color;
 
 ?>
-
+<style>
+      .problema{
+        background-color: <?php echo $color?>;
+        color: #000000;
+    }
+</style>
+<!-- empieza la tabla-->
 <tr>
 <td <?php echo  'class="'.$row['categorias'] .'"'; ?>><?php echo $row['id']; ?></td>
 <td><?php echo $row['nombre']; ?></td>
 <td><?php echo $row['descripcion']; ?></td>
 <td><?php echo $row['color']; ?></td>
-<td><?php echo $row['precio']; ?></td>
-<td><?php echo $row['cantidad']; ?></td>
+<td><?php echo $row['precio']; ?>$</td>
+
+
+
+<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $row['cantidad']; ?></td>
+<td><?php echo $row['cantidad_min']; ?></td>
+
+
 <td><?php echo $row['categorias']; ?></td>
 <td><img width="100" src="data:image;base64,<?php echo base64_encode($row['imagen']);  ?>" ></td>
 
