@@ -36,12 +36,12 @@
                                 <input type="tel"  id="telefono" name="telefono" class="form-control">
                                 <input type="hidden" name="accion" value="insertar_usuarios">
                             </div>
-                            <div class="form-group">
-                             <br>
-                                <input type="submit"class="btn btn-success btn-md space" value="registrar">
-                                <div id="register-link" class="text-right">
-                                    <br>
-                                <a href="login.php"><input type="button"  class="btn btn-primary space" value="iniciar sesión"></a>
+                           
+
+                                <div class="mb-3">
+                               <input type="submit" name="registrar">
+                               
+                            </div>
                             </div>
                             </div>
 
