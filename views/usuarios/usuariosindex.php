@@ -36,7 +36,7 @@
 
 <?php
 
-$sql = "SELECT  nombre, password, telefono, correo,registro FROM user WHERE correo ='$actualsesion'";
+$sql = "SELECT  nombre, password, telefono, correo,registro FROM user ";
 $usuarios = mysqli_query($conexion, $sql);
 if($usuarios -> num_rows > 0){
 foreach($usuarios as $key => $row ){

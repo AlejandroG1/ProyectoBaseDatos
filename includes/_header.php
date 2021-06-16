@@ -7,6 +7,7 @@ if($actualsesion == null || $actualsesion == ''){
 
     echo 'acceso denegado';
     die();
+    
 }
 ?>
 <head>
@@ -52,6 +53,12 @@ if($actualsesion == null || $actualsesion == ''){
     </a>
 </li>
 <li class="nav-item">
+    <a class="nav-link collapsed" href="indexcopy.php">
+    <span class="material-icons">pattern</span>
+        <span>Stock por acabarse</span>
+    </a>
+</li>
+<li class="nav-item">
     <a class="nav-link collapsed" href="categorias.php">
         <span class="material-icons">category</span>
         <span>  Categorias</span>
@@ -61,12 +68,20 @@ if($actualsesion == null || $actualsesion == ''){
 <div class="sidebar-heading">
     PERFIL
 </div>
-<li class="nav-item">
-    <a class="nav-link collapsed" href="usuariosindex.php">
-        <span class="material-icons">people</span>
-        <span>Información usuario</span>
-    </a>
-</li>
+<?php
+if( $actualsesion == "andycalan@gmai.com"){
+    ?> 
+ 
+ <li class="nav-item">
+     <a class="nav-link collapsed" href="usuariosindex.php">
+         <span class="material-icons">people</span>
+         <span>Información usuario</span>
+     </a>
+ </li>
+ <?php
+ }
+
+   ?> 
 <li class="nav-item">
     <a class="nav-link" href="../../includes/_sesion/cerrarSesion.php">
     <span class="material-icons">logout</span>
@@ -114,5 +129,3 @@ if($actualsesion == null || $actualsesion == ''){
                         </li>
                     </ul>
                 </nav>
-
-
