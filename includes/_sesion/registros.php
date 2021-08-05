@@ -21,19 +21,19 @@
                             <h3 class="text-center">registro</h3>
                             <div class="form-group">
                             <label for="nombre" class="form-label">Nombre *</label>
-                            <input type="text"  id="nombre" name="nombre" class="form-control" required>
+                            <input type="text"  id="nombre" name="nombre" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="username">Correo:</label><br>
-                                <input type="text" name="correo" id="correo" class="form-control" required>
+                                <input type="text" name="correo" id="correo" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>
-                                <input type="password" name="password" id="password" class="form-control" required>
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                   <label for="telefono" class="form-label">Telefono *</label>
-                                <input type="tel"  id="telefono" name="telefono" class="form-control" required>
+                                <input type="tel"  id="telefono" name="telefono" class="form-control">
                                 <input type="hidden" name="accion" value="insertar_usuarios">
                             </div>
                            
